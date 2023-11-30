@@ -12,7 +12,8 @@ Nhập các thư viện random và string để sử dụng các hàm liên quan
 chars = string.printable.strip()
 ```
 
-Tạo biến chars bằng cách gọi hàm string.printable để lấy tất cả các ký tự có thể in được, sau đó dùng hàm strip() để loại bỏ ký tự khoảng trắng ở đầu và cuối.
+Tạo biến chars bằng cách gọi hàm string.printable để lấy tất cả các ký tự có thể in được, 
+sau đó dùng hàm strip() để loại bỏ ký tự khoảng trắng ở đầu và cuối.
 
 ```python
 pass_len = int(input("Enter the password length: "))
