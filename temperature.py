@@ -1,8 +1,30 @@
 """
-1. Import thư viện tkinter và messagebox để tạo giao diện người dùng.
-2. Định nghĩa hàm convert để thực hiện chuyển đổi nhiệt độ và xử lý các trường hợp ngoại lệ.
-3. Tạo cửa sổ giao diện chương trình và các thành phần giao diện như nhãn, ô nhập liệu, nút chuyển đổi và nút lựa chọn chuyển đổi.
-4. Khi người dùng nhấn nút "Convert", hàm convert sẽ được gọi để thực hiện chuyển đổi và hiển thị kết quả trong một cửa sổ thông báo.
+Đoạn code Python này là một chương trình đơn giản để chuyển đổi nhiệt độ giữa độ C và độ F.
+
+Các bước chính trong code:
+
+1. Import thư viện tkinter và messagebox 
+- tkinter: để tạo giao diện người dùng 
+- messagebox: để hiển thị cửa sổ thông báo
+
+2. Định nghĩa hàm convert() 
+- Thực hiện tính toán chuyển đổi nhiệt độ
+- Sử dụng công thức:
+    F = (9/5)*C + 32
+    C = (F - 32) * (5/9)
+- Xử lý ngoại lệ nếu người dùng nhập sai
+
+3. Tạo giao diện người dùng Tkinter
+- Cửa sổ chính
+- Nhãn và ô nhập liệu cho nhiệt độ
+- Nút Convert để gọi hàm convert()
+- Radio button để chọn hướng chuyển đổi
+
+4. Khi nhấn Convert:
+- Gọi hàm convert() để tính toán 
+- Hiển thị kết quả trong hộp thoại thông báo
+
+Tóm lại, đây là một ứng dụng đơn giản để chuyển đổi nhiệt độ C sang F và ngược lại, sử dụng Tkinter để xây dựng giao diện.
 """
 import tkinter as tk
 from tkinter import messagebox
@@ -46,12 +68,13 @@ tk.Label(frame, text="Temperature", font=font_family).grid(row=0, column=0)
 temp = tk.Entry(frame, width=30, font=font_family)
 temp.grid(row=0, column=1, padx=20, pady=10)
 
-tk.Button(frame, text="Convert", command=convert, font=font_family).grid(row=0, column=2)
+tk.Button(frame, text="Convert", command=convert,
+          font=font_family).grid(row=0, column=2)
 
 var = tk.IntVar()
 tk.Radiobutton(frame, text="C to F", variable=var,
-                value=1, font=font_family).grid(row=1, column=1)
+               value=1, font=font_family).grid(row=1, column=1)
 tk.Radiobutton(frame, text="F to C", variable=var,
-                value=2, font=font_family).grid(row=2, column=1)
+               value=2, font=font_family).grid(row=2, column=1)
 
 root.mainloop()
