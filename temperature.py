@@ -58,7 +58,7 @@ def convert():
 
 
 root = tk.Tk()
-root.title("Temperature convertor")
+root.title("Temperature converter")
 root.geometry("650x150")
 
 frame = tk.Frame(root)
