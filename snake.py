@@ -9,37 +9,25 @@ window = tkinter.Tk()
 window_dimensions = [625, 625]
 window.geometry(str(window_dimensions[0]) + "x" + str(window_dimensions[1]))
 window.resizable(0, 0)
-
-
 window.title("Snake Game")
-
-
 window.protocol("WM_DELETE_WINDOW", sys.exit)
-
-
 frames_per_second = 12
-
 
 game_canvas = tkinter.Canvas(
     window, width=window_dimensions[0], height=window_dimensions[1], bd=0, highlightthickness=0)
 game_canvas.pack()
 
-
 game_scale = 25
 game_dimensions = [window_dimensions[0] /
                    game_scale, window_dimensions[1] / game_scale]
 
-
 player_coords = [math.floor(game_dimensions[0] / 2.0),
                  math.floor(game_dimensions[1] / 2.0)]
 player_tail = []
-
-
 player_velocity = [1, 0]
 
 
 def generateAppleCoords():
-
     global player_tail
 
     generated_apple_coords = [random.randint(
@@ -53,8 +41,6 @@ def generateAppleCoords():
 
 
 apple_coords = generateAppleCoords()
-
-
 velocity_changed_this_frame = False
 
 
@@ -139,9 +125,5 @@ def onKeyDown(e):
 
 
 window.bind("<KeyPress>", onKeyDown)
-
-
 gameloop()
-
-
 window.mainloop()
